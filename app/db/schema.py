@@ -7,7 +7,7 @@ class UserBase(SQLModel):
     email: EmailStr = Field(unique=True, index=True)
 
 
-class User(SQLModel, table=True):
+class User(UserBase, table=True):
     id: int | None = Field(default=None, primary_key=True)
 
     hashed_password: str
